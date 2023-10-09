@@ -11,7 +11,14 @@
 <h4>Resize the browser window to see the effect.</h4>
 
 <div class="responsive">
-  <div class="gallery" onmouseover="pop_out_div()">
+    <div style="width: 75%;align-items: center;">
+        <div id="itemid"></div>
+        <div></div>
+    </div>
+</div>
+
+<div class="responsive">
+  <div id ="item-1" class="gallery" onmouseover="pop_out_div('item-1')" onmouseout="pop_down_div('item-1')">
     <a target="_blank" href="img_5terre.jpg">
       <img src="img_5terre.jpg" alt="Cinque Terre" width="600" height="400">
     </a>
@@ -47,7 +54,8 @@
   </div>
 </div>
 
-<div class ="center" style="width:95%;">a</div>
+<div id="displayhere"></div>
+<div class ="center" style="width:95%;display:none;" >a</div>
 <div class="clearfix"></div>
 
 <div style="padding:6px;">
