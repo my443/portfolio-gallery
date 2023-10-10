@@ -1,6 +1,8 @@
 /** Foundational Source for this code: 
     https://www.w3schools.com/css/tryit.asp?filename=trycss_image_gallery_responsive
     https://www.w3schools.com/css/css_image_gallery.asp */
+
+
 div.gallery {
   border: 1px solid #ccc;
 }
@@ -48,15 +50,73 @@ div.desc {
   clear: both;
 }
 
-/** Centre vertically
-    https://blog.hubspot.com/website/center-div-css  */
-.center {
+.modal {
   border: 5px solid;
   position: absolute;
   top: 50%;
   transform: translate(0, -50%);
   padding: 10px;
   z-index: 1;
+  /* Puts this in front of the other elements. */
   background-color: red;
-  width:95%;
+  width: 95%;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.border-on {
+  border-style: solid;
+  border-width: 1px;
+}
+
+
+.col-1 {
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+}
+
+.col-2 {
+  padding: 0 6px;
+  float: left;
+  width: 49.99999%;
+}
+
+.col-3 {
+  padding: 0 6px;
+  float: left;
+  width: 74.99999%;
+}
+
+.col-4 {
+  padding: 0 6px;
+  float: left;
+  width: 99.99999%;
+}
+
+/* For smaller screens. Because the elements will be stacked now.*/
+@media only screen and (max-width: 700px) {
+  .col-1 {
+    width: 100%;
+  }
+
+  .col-2 {
+    width: 100%;
+  }
+
+  .col-3 {
+    width: 100%;
+  }
+
+  .col-4 {
+    width: 100%;
+  }
+}
+
+.red {
+  background-color: red;
 }

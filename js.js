@@ -1,7 +1,7 @@
 function pop_out_div(elementID){
     element = document.getElementById(elementID);
     element = document.getElementById(elementID);
-    element.classList.add('center');
+    element.classList.add('modal');
 
     // cloned_element = element.cloneNode(true);
     // cloned_element.id = elementID+'-expanded';
@@ -13,5 +13,5 @@ function pop_out_div(elementID){
 
 function pop_down_div(elementID){
     element = document.getElementById(elementID);
-    element.classList.remove('center');
+    element.classList.remove('modal');
 }
