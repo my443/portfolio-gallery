@@ -120,3 +120,13 @@ div.desc {
 .red {
   background-color: red;
 }
+
+/* For the sticky header element
+    https://stackoverflow.com/questions/1216114/how-can-i-make-a-div-stick-to-the-top-of-the-screen-once-its-been-scrolled-to */
+.fixedElement {
+  background-color: #c0c0c0;
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:100;
+}

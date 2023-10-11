@@ -1,4 +1,4 @@
-function pop_out_div(elementID){
+function popOutDiv(elementID){
     element = document.getElementById(elementID);
     element = document.getElementById(elementID);
     element.classList.add('modal');
@@ -11,12 +11,12 @@ function pop_out_div(elementID){
     // document.getElementById('displayhere').appendChild(cloned_element);
 }
 
-function pop_down_div(elementID){
+function popDownDiv(elementID){
     element = document.getElementById(elementID);
     element.classList.remove('modal');
 }
 
-function fill_preview_area(sourceElementID){
+function fillPreviewArea(sourceElementID){
     headline = document.getElementById('item-1-headline').innerHTML;
     tagline = document.getElementById('item-1-tagline').innerHTML;
     
@@ -24,3 +24,24 @@ function fill_preview_area(sourceElementID){
     document.getElementById('tagline').innerHTML = tagline;
     console.log(headline, tagline);
 }
+
+function parseMarkdown(mardownSource){
+    //  A couple of good sources: https://stackoverflow.com/questions/65203127/replace-markdown-tag-around-string-with-html-tag
+    
+    // Define formatting in a markdownTag : htmlTag structure
+    markdownFormatting = { '__': 'u'}
+
+    markdownTags = Object.keys(markdownFormatting);
+
+    markdownTags.forEach(element => {
+        htmlTag = markdownFormatting[element];
+        console.log(element, htmlTag);
+
+        console.log ( `/${element}(\w+)${element}/g, "<${htmlTag}>$1<\/${htmlTag}>"`); 
+    });
+
+}
+
+console.log('started');
+
+parseMarkdown('__some__, __thing__');
