@@ -32,27 +32,37 @@ function parseMarkdown(mardownSource){
         */
     
     // Define formatting in a markdownTag : htmlTag structure
-    markdownFormatting = { '__': 'u'}
+    markdownFormatting = { '__': { htmlTag: 'u', regExpression: new RegExp('__(\\w+)__', "g") },
+                            '**': { htmlTag: 'b', regExpression: new RegExp('\\*\\*(\\w+)\\*\\*', "g") }
+                        }
 
     markdownTags = Object.keys(markdownFormatting);
 
     markdownTags.forEach(element => {
-        htmlTag = markdownFormatting[element];
-        console.log(element, htmlTag);
+        markDownDetails = markdownFormatting[element];
+        htmlTag = markDownDetails['htmlTag'];
+        regExpression = markDownDetails['regExpression'];
+        // console.log(element, htmlTag);
+        // console.log(markDownDetails, regExpression);
 
-        regExpresion = new RegExp(`${element}(\\w+)${element}`, "g")
+        // regExpresion = new RegExp(`${element}(\\w+)${element}`, "g")
         
-        newstring = mardownSource.replace(/__(\w+)__/g, "<u>$1<\/u>");
-        newstring = mardownSource.replace(/__(\w+)__/g, `<${htmlTag}>$1<\/${htmlTag}>`);
-        newstring = mardownSource.replace(regExpresion, `<${htmlTag}>$1<\/${htmlTag}>`);       
+        // newstring = mardownSource.replace(/__(\w+)__/g, "<u>$1<\/u>");
+        // newstring = mardownSource.replace(/__(\w+)__/g, `<${htmlTag}>$1<\/${htmlTag}>`);
+        // newstring = mardownSource.replace(regExpresion, `<${htmlTag}>$1<\/${htmlTag}>`);       
+        newstring = mardownSource.replace(regExpression, `<${htmlTag}>$1<\/${htmlTag}>`);          
         // console.log ( `/${element}(\w+)${element}/g, "<${htmlTag}>$1<\/${htmlTag}>"`); 
-        console.log(newstring);
+        // console.log(newstring);
+        mardownSource = newstring;
     });
 
+    return mardownSource;
 
 
 }
 
 console.log('started');
 
-parseMarkdown('__some__, __thing__');
+p = parseMarkdown('__some__, __thing__ **more**');
+
+console.log(p);
