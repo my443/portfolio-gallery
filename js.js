@@ -26,7 +26,10 @@ function fillPreviewArea(sourceElementID){
 }
 
 function parseMarkdown(mardownSource){
-    //  A couple of good sources: https://stackoverflow.com/questions/65203127/replace-markdown-tag-around-string-with-html-tag
+    /**  A couple of good sources:   https://stackoverflow.com/questions/65203127/replace-markdown-tag-around-string-with-html-tag
+                                    https://randyperkins2k.medium.com/writing-a-simple-markdown-parser-using-javascript-1f2e9449a558
+                                    https://dev.to/casualwriter/a-simple-markdown-parser-in-50-lines-of-js-4gpi
+        */
     
     // Define formatting in a markdownTag : htmlTag structure
     markdownFormatting = { '__': 'u'}
@@ -36,9 +39,12 @@ function parseMarkdown(mardownSource){
     markdownTags.forEach(element => {
         htmlTag = markdownFormatting[element];
         console.log(element, htmlTag);
+
+        regExpresion = new RegExp(`${element}(\\w+)${element}`, "g")
         
-        newstring = mardownSource.replace(/__(\w+)__/g, "<u>$1<\/u>")
-        newstring = mardownSource.replace(/__(\w+)__/g, `<${htmlTag}>$1<\/${htmlTag}>`)
+        newstring = mardownSource.replace(/__(\w+)__/g, "<u>$1<\/u>");
+        newstring = mardownSource.replace(/__(\w+)__/g, `<${htmlTag}>$1<\/${htmlTag}>`);
+        newstring = mardownSource.replace(regExpresion, `<${htmlTag}>$1<\/${htmlTag}>`);       
         // console.log ( `/${element}(\w+)${element}/g, "<${htmlTag}>$1<\/${htmlTag}>"`); 
         console.log(newstring);
     });
