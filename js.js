@@ -36,9 +36,14 @@ function parseMarkdown(mardownSource){
     markdownTags.forEach(element => {
         htmlTag = markdownFormatting[element];
         console.log(element, htmlTag);
-
-        console.log ( `/${element}(\w+)${element}/g, "<${htmlTag}>$1<\/${htmlTag}>"`); 
+        
+        newstring = mardownSource.replace(/__(\w+)__/g, "<u>$1<\/u>")
+        newstring = mardownSource.replace(/__(\w+)__/g, `<${htmlTag}>$1<\/${htmlTag}>`)
+        // console.log ( `/${element}(\w+)${element}/g, "<${htmlTag}>$1<\/${htmlTag}>"`); 
+        console.log(newstring);
     });
+
+
 
 }
 
