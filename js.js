@@ -42,17 +42,9 @@ function parseMarkdown(mardownSource){
         markDownDetails = markdownFormatting[element];
         htmlTag = markDownDetails['htmlTag'];
         regExpression = markDownDetails['regExpression'];
-        // console.log(element, htmlTag);
-        // console.log(markDownDetails, regExpression);
-
-        // regExpresion = new RegExp(`${element}(\\w+)${element}`, "g")
-        
-        // newstring = mardownSource.replace(/__(\w+)__/g, "<u>$1<\/u>");
-        // newstring = mardownSource.replace(/__(\w+)__/g, `<${htmlTag}>$1<\/${htmlTag}>`);
-        // newstring = mardownSource.replace(regExpresion, `<${htmlTag}>$1<\/${htmlTag}>`);       
+  
         newstring = mardownSource.replace(regExpression, `<${htmlTag}>$1<\/${htmlTag}>`);          
-        // console.log ( `/${element}(\w+)${element}/g, "<${htmlTag}>$1<\/${htmlTag}>"`); 
-        // console.log(newstring);
+
         mardownSource = newstring;
     });
 
@@ -61,8 +53,8 @@ function parseMarkdown(mardownSource){
 
 }
 
-console.log('started');
+// console.log('started');
 
-p = parseMarkdown('__some__, __thing__ **more**');
+// p = parseMarkdown('__some__, __thing__ **more**');
 
-console.log(p);
+// console.log(p);
