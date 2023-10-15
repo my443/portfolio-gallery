@@ -1,0 +1,14 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<portfolioitem>
+    <title></title>
+    <tagline></tagline>
+    <problem></problem>
+    <solution></solution>
+    <technologies>
+        <technology></technology>
+        <technology></technology>
+        <technology></technology>
+    </technologies>
+    <additionaltext></additionaltext>
+    <id></id>
+</portfolioitem>

@@ -1,0 +1,27 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<portfolioitem>
+    <title>BrighterChecklist.com</title>
+    <tagline>Repeating checklists to help you do the job right every time.</tagline>
+    <problem>Sometimes you have a set of steps that should be completed in the same way every time. This could be a pre-surgery check-in, a daily cleaning checklist for a restaurant or a month-end accounting system close checklist.</problem>
+    <solution>BrighterChecklist.com equips you to create a template for a repeating checklist and assign it to other people as needed.</solution>
+    <technologies>
+        <technology>Python</technology>
+        <technology>HTML</technology>
+        <technology>JavaScript</technology>
+    </technologies>
+    <additionaltext>This was a project to see what was required in coding and launching a SaaS product. 
+        <p>Some additional examples of when you might use BrighterChecklist are:</p>
+        <ul>
+            <li>If you are an event planner, delivering similar events over and over again.</li>
+            <li>If you are deploying software and you have a set of steps that you want to complete before each release.</li>
+            <li></li>
+            <li></li>
+        </ul>
+    </additionaltext>
+    <id></id>
+    <images>
+        <image></image>
+        <image></image>
+        <image></image>
+    </images>
+</portfolioitem>

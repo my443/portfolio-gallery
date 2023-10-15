@@ -3,12 +3,6 @@ function popOutDiv(elementID){
     element = document.getElementById(elementID);
     element.classList.add('modal');
 
-    // cloned_element = element.cloneNode(true);
-    // cloned_element.id = elementID+'-expanded';
-    // cloned_element.classList.add('center');
-
-    // cloned_element.removeAttribute("onmouseover");
-    // document.getElementById('displayhere').appendChild(cloned_element);
 }
 
 function popDownDiv(elementID){
@@ -25,36 +19,26 @@ function fillPreviewArea(sourceElementID){
     console.log(headline, tagline);
 }
 
-function parseMarkdown(mardownSource){
-    /**  A couple of good sources:   https://stackoverflow.com/questions/65203127/replace-markdown-tag-around-string-with-html-tag
-                                    https://randyperkins2k.medium.com/writing-a-simple-markdown-parser-using-javascript-1f2e9449a558
-                                    https://dev.to/casualwriter/a-simple-markdown-parser-in-50-lines-of-js-4gpi
-        */
-    
-    // Define formatting in a markdownTag : htmlTag structure
-    markdownFormatting = { '__': { htmlTag: 'u', regExpression: new RegExp('__(\\w+)__', "g") },
-                            '**': { htmlTag: 'b', regExpression: new RegExp('\\*\\*(\\w+)\\*\\*', "g") }
-                        }
+/* Item name does not require the .xml extension */
+function getDescription(itemName){
+    var xmlhttp = new XMLHttpRequest();
+    urlpath = 'items/' + itemName + '.xml';
 
-    markdownTags = Object.keys(markdownFormatting);
-
-    markdownTags.forEach(element => {
-        markDownDetails = markdownFormatting[element];
-        htmlTag = markDownDetails['htmlTag'];
-        regExpression = markDownDetails['regExpression'];
-  
-        newstring = mardownSource.replace(regExpression, `<${htmlTag}>$1<\/${htmlTag}>`);          
-
-        mardownSource = newstring;
-    });
-
-    return mardownSource;
-
-
+    xmlhttp.addEventListener("load", parseXMLToArray);
+    xmlhttp.open("GET", urlpath , true);
+    xmlhttp.send();
 }
 
-// console.log('started');
+function parseXMLToArray(){
+    sourceXML = this.responseXML;
+    console.log(sourceXML);
 
-// p = parseMarkdown('__some__, __thing__ **more**');
+    title = sourceXML.getElementsByTagName('title')[0].innerHTML
 
-// console.log(p);
+    
+    console.log(title);
+}
+
+
+
+
