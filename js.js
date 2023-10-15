@@ -31,14 +31,49 @@ function getDescription(itemName){
 
 function parseXMLToArray(){
     sourceXML = this.responseXML;
-    console.log(sourceXML);
 
-    title = sourceXML.getElementsByTagName('title')[0].innerHTML
+    title = getSingleValueFromXML(sourceXML, 'title')
+    tagline = getSingleValueFromXML(sourceXML, 'tagline')
+    problem = getSingleValueFromXML(sourceXML, 'problem')
+    solution = getSingleValueFromXML(sourceXML, 'solution')
+    additionaltext = getSingleValueFromXML(sourceXML, 'additionaltext')
+    id = getSingleValueFromXML(sourceXML, 'id')
+    technologies = getValuesFromAListInTheXML(sourceXML, 'technology');
 
+    json = {
+        'id': id,
+        'title': title,
+        'tagline': tagline,
+        'problem': problem,
+        'solution': solution,
+        'technologies': technologies,
+        'additionalText': additionaltext,
+    }
     
-    console.log(title);
+    console.log(json);
 }
 
+function getSingleValueFromXML(sourceXML, elementName){
+    return sourceXML.getElementsByTagName(elementName)[0].innerHTML
+}
+
+function getValuesFromAListInTheXML(sourceXML, listItemElementName){
+    elements = sourceXML.getElementsByTagName(listItemElementName)
+    returnString = '';
+
+    Array.from(elements).forEach( (element, index) => {
+        if (index != 0){
+            returnString = returnString + ', ' + element.innerHTML;
+        }
+        else {
+            returnString = element.innerHTML;
+        }
+        
+    });
+
+    return returnString;
+
+}
 
 
 

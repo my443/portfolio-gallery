@@ -6,6 +6,7 @@
     <solution>BrighterChecklist.com equips you to create a template for a repeating checklist and assign it to other people as needed.</solution>
     <technologies>
         <technology>Python</technology>
+        <technology>Django</technology>
         <technology>HTML</technology>
         <technology>JavaScript</technology>
     </technologies>
