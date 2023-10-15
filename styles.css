@@ -25,6 +25,11 @@ div.desc {
   box-sizing: border-box;
 }
 
+div.preview {
+  max-height:200px;
+  min-height: 200px;
+}
+
 .responsive {
   padding: 0 6px;
   float: left;
@@ -130,3 +135,4 @@ div.desc {
   width:100%;
   z-index:100;
 }
+

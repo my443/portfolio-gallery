@@ -10,14 +10,17 @@ function popDownDiv(elementID){
     element.classList.remove('modal');
 }
 
-function fillPreviewArea(sourceElementID){
-    headline = document.getElementById('item-1-headline').innerHTML;
-    tagline = document.getElementById('item-1-tagline').innerHTML;
-    
-    document.getElementById('headline').innerHTML = headline;
-    document.getElementById('tagline').innerHTML = tagline;
-    console.log(headline, tagline);
+function fillPreviewArea(json){
+    // headline = document.getElementById('item-1-headline').innerHTML;
+    // tagline = document.getElementById('item-1-tagline').innerHTML;
+    document.getElementById('headline').innerHTML = json.title;
+    document.getElementById('tagline').innerHTML = json.tagline;
+    document.getElementById('details').innerHTML = json.problem + '<br>' + json.solution + '<br>' + json.additionalText ;
+    // console.log(headline, tagline);
 }
+
+
+// Getting the XML File starts here. 
 
 /* Item name does not require the .xml extension */
 function getDescription(itemName){
@@ -50,7 +53,7 @@ function parseXMLToArray(){
         'additionalText': additionaltext,
     }
     
-    console.log(json);
+    fillPreviewArea(json);
 }
 
 function getSingleValueFromXML(sourceXML, elementName){

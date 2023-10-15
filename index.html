@@ -11,22 +11,15 @@
 <h4>Resize the browser window to see the effect.</h4>
 
 <div class="row" style="max-height: 200px;">
-        <div class="col-1 border-on ">
+        <div class="col-1 border-on preview" >
           <h2 id="headline"></h2>
           <p><b><span id="tagline"></span></b></p>
         </div>
-        <div class="col-3 border-on  red" style="max-height:200px; overflow-y:scroll;">b
-        <br><br><br><br><br><br><br><br><br>
-        <br><br><br><br><br><br><br><br><br>
-        <br><br><br><br><br><br><br><br><br><br>b
-        <br><br><br><br><br><br><br><br><br><br>b
-        <br><br><br><br><br><br><br><br><br><br>b
-        <br><br><br><br><br><br><br><br><br><br>b
-        <br><br><br><br><br><br><br><br><br><br>b</div>
+        <div id="details" class="col-3 border-on preview" style="overflow-y:scroll;"></div>
 </div>
 
 <div class="responsive">
-  <div id ="item-1" class="gallery" onmouseover="fillPreviewArea('item-1')" onmouseout="popDownDiv('item-1')">
+  <div id ="item-1" class="gallery" onmouseover="getDescription('brighterchecklist')" onmouseout="popDownDiv('item-1')">
     <h3 id="item-1-headline">BrighterChecklists</h3>
     <p id="item-1-tagline">Repeating checklists to help you do the job right every time.</p>
     <a target="_blank" href="">
