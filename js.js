@@ -81,6 +81,7 @@ function getValuesFromAListInTheXML(sourceXML, listItemElementName){
 function gallery(){
     if (document.getElementById('modal').style.display == 'none') {
         document.getElementById('modal').style.display = 'block';
+        pictures = new Pictures(['brighterchecklist-1.png', 'brighterchecklist-2.png', 'brighterchecklist-3.png']);
     }
     else {
         document.getElementById('modal').style.display = 'none'    
@@ -95,7 +96,12 @@ function closeGallery(){
 function Pictures(listOfImages=[]) {
     this.currentNumber=  1;
     this.listOfImages = listOfImages;
+    // this.maxImages = len(listOfImages) - 1; // So that you know where the rollover point is. 
   }
+
+// Add the functions to the prototype of the object
+// https://stackoverflow.com/questions/13521833/javascript-add-method-to-object
+Pictures.prototype.a = function(c){console.log(c);}
 
 
 document.onkeydown = function keyPress (e) {
