@@ -1,70 +1,84 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <link rel="stylesheet" href="styles.css">
-    <script src="js.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <script src="js.js"></script>
 </head>
+
 <body>
 
-<h2>Responsive Image Gallery</h2>
+  <h2>Responsive Image Gallery</h2>
 
-<h4>Resize the browser window to see the effect.</h4>
+  <h4>Resize the browser window to see the effect.</h4>
 
-<div class="row" style="max-height: 200px;">
-        <div class="col-1 border-on preview" >
-          <h2 id="headline"></h2>
-          <p><b><span id="tagline"></span></b></p>
-        </div>
-        <div id="details" class="col-3 border-on preview" style="overflow-y:scroll;"></div>
-</div>
+  <div class="row" style="max-height: 200px;">
+    <div class="col-1 border-on preview">
+      <h2 id="headline"></h2>
+      <p><b><span id="tagline"></span></b></p>
+      <div style="text-align: center;"><button onclick="gallery();">Gallery</button></div>
+    </div>
+    <div id="details" class="col-3 border-on preview" style="overflow-y:scroll;"></div>
 
-<div class="responsive">
-  <div id ="item-1" class="gallery" onmouseover="getDescription('brighterchecklist')" onmouseout="popDownDiv('item-1')">
-    <h3 id="item-1-headline">BrighterChecklists</h3>
-    <p id="item-1-tagline">Repeating checklists to help you do the job right every time.</p>
-    <a target="_blank" href="">
-      <img src="" alt="Cinque Terre" width="600" height="400">
-    </a>
-    <div class="desc">Add a description of the image here</div>
   </div>
-</div>
 
-
-<div class="responsive">
-  <div class="gallery">
-    <a target="_blank" href="">
-      <img src="" alt="Forest" width="600" height="400">
-    </a>
-    <div class="desc">Add a description of the image here</div>
+  <div class="responsive">
+    <div id="item-1" class="gallery" onmouseover="getDescription('brighterchecklist')"
+      onmouseout="popDownDiv('item-1')">
+      <h3 id="item-1-headline">BrighterChecklists</h3>
+      <p id="item-1-tagline">Repeating checklists to help you do the job right every time.</p>
+      <a target="_blank" href="">
+        <img src="" alt="Cinque Terre" width="600" height="400">
+      </a>
+      <div class="desc">Add a description of the image here</div>
+    </div>
   </div>
-</div>
 
-<div class="responsive">
-  <div class="gallery">
-    <a target="_blank" href="">
-      <img src="" alt="Northern Lights" width="600" height="400">
-    </a>
-    <div class="desc">Add a description of the image here</div>
+
+  <div class="responsive">
+    <div class="gallery">
+      <a target="_blank" href="">
+        <img src="" alt="Forest" width="600" height="400">
+      </a>
+      <div class="desc">Add a description of the image here</div>
+    </div>
   </div>
-</div>
 
-<div class="responsive">
-  <div class="gallery">
-    <a target="_blank" href="">
-      <img src="" alt="Mountains" width="600" height="400">
-    </a>
-    <div class="desc">Add a description of the image here</div>
+  <div class="responsive">
+    <div class="gallery">
+      <a target="_blank" href="">
+        <img src="" alt="Northern Lights" width="600" height="400">
+      </a>
+      <div class="desc">Add a description of the image here</div>
+    </div>
   </div>
-</div>
 
-<div id="displayhere"></div>
-<div class ="modal" style="width:95%;display:none;" >a</div>
-<div class="clearfix"></div>
-<button onclick="getDescription('brighterchecklist.xml')">click</button>
-<div style="padding:6px;">
-  <p>This example use media queries to re-arrange the images on different screen sizes: for screens larger than 700px wide, it will show four images side by side, for screens smaller than 700px, it will show two images side by side. For screens smaller than 500px, the images will stack vertically (100%).</p>
-  <p>You will learn more about media queries and responsive web design later in our CSS Tutorial.</p>
-</div>
+  <div class="responsive">
+    <div class="gallery">
+      <a target="_blank" href="">
+        <img src="" alt="Mountains" width="600" height="400">
+      </a>
+      <div class="desc">Add a description of the image here</div>
+    </div>
+  </div>
+
+  <div id="displayhere"></div>
+  <div id="modal" class="modal" style="display:block;">
+    <div class="close-gallery" style="text-align: right;"><a onclick="closeGallery()"><img width="25px" height="25px" src="images/close-sharp.svg"/></a></div>
+    <div  class="arrow" > <img width="65px" height="65px" src="images/arrow-back.svg"/>
+    </div>
+        <div style="float:left;width: 93%;"><img src="images/brighterchecklist-1.png" alt="An image of the BrighterChecklist home page."></div>
+        <div class="arrow" ><img width="65px" height="65px" src="images/arrow-forward.svg"/></div>
+    </div>
+    <div class="clearfix"></div>
+    <button onclick="getDescription('brighterchecklist.xml')">click</button>
+    <div style="padding:6px;">
+      <p>This example use media queries to re-arrange the images on different screen sizes: for screens larger than
+        700px wide, it will show four images side by side, for screens smaller than 700px, it will show two images side
+        by side. For screens smaller than 500px, the images will stack vertically (100%).</p>
+      <p>You will learn more about media queries and responsive web design later in our CSS Tutorial.</p>
+    </div>
 
 </body>
+
 </html>

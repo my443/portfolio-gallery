@@ -56,6 +56,7 @@ div.preview {
 }
 
 .modal {
+  margin-left: 25%;
   border: 5px solid;
   position: absolute;
   top: 50%;
@@ -64,7 +65,8 @@ div.preview {
   z-index: 1;
   /* Puts this in front of the other elements. */
   background-color: red;
-  width: 95%;
+  width: 50%;
+  /* height: 50%; */
 }
 
 .row::after {
@@ -120,6 +122,12 @@ div.preview {
   .col-4 {
     width: 100%;
   }
+
+  .modal {
+    width: 95%;
+    height: 50;
+    margin-left: 0%;
+  }
 }
 
 .red {
@@ -134,5 +142,23 @@ div.preview {
   top:0;
   width:100%;
   z-index:100;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.arrow {
+  float:left;
+  /* position: absolute; */
+  padding-top: 25%;
+  top:45%;
+  width: 3%;
+}
+
+.close-gallery:hover {
+    cursor:pointer;
+    /* The alternative could be 'grab' - this would show the grab hand. */
 }
 

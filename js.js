@@ -78,5 +78,30 @@ function getValuesFromAListInTheXML(sourceXML, listItemElementName){
 
 }
 
+function gallery(){
+    if (document.getElementById('modal').style.display == 'none') {
+        document.getElementById('modal').style.display = 'block';
+    }
+    else {
+        document.getElementById('modal').style.display = 'none'    
+    }
+}
+
+function closeGallery(){
+    document.getElementById('modal').style.display = 'none'; 
+}
+
+// Keeps track of the picture
+function Pictures(listOfImages=[]) {
+    this.currentNumber=  1;
+    this.listOfImages = listOfImages;
+  }
+
+
+document.onkeydown = function keyPress (e) {
+    if(e.key === "Escape") {
+        closeGallery();
+    }
+}
 
 
