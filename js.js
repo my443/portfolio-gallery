@@ -92,12 +92,41 @@ function closeGallery(){
     document.getElementById('modal').style.display = 'none'; 
 }
 
+//Initialize an empty pictures instance. So that it is accessible globally.
+let pictures = new Pictures([]);
+
 // Keeps track of the picture
 function Pictures(listOfImages=[]) {
-    this.currentNumber=  1;
+    this.currentNumber=  0;
     this.listOfImages = listOfImages;
-    // this.maxImages = len(listOfImages) - 1; // So that you know where the rollover point is. 
+
+    if (listOfImages.length > 0)
+        this.maxImages = listOfImages.length - 1; // So that you know where the rollover point is. 
+    else
+        this.maxImages = 0;
+
+    this.nextImage = function() {
+        if (this.currentNumber + 1 <= this.maxImages){
+            this.currentNumber++;
+        }
+        else {
+            this.currentNumber = 0;
+        }
+        document.getElementById('pictureOnDisplay').src = 'images/'+listOfImages[this.currentNumber];
+    }
+
+    this.previousImage = function() {
+        if (this.currentNumber - 1 >= 0){
+            this.currentNumber--;
+        }
+        else {
+            this.currentNumber = this.maxImages;
+        }
+        document.getElementById('pictureOnDisplay').src = 'images/'+listOfImages[this.currentNumber];
+    }
+
   }
+
 
 // Add the functions to the prototype of the object
 // https://stackoverflow.com/questions/13521833/javascript-add-method-to-object
