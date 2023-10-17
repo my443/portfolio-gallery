@@ -66,6 +66,9 @@ div.preview {
   /* Puts this in front of the other elements. */
   background-color: red;
   width: 50%;
+  min-height: 75%;
+  max-height: 75%;
+  object-fit: contain;
   /* height: 50%; */
 }
 
@@ -125,7 +128,7 @@ div.preview {
 
   .modal {
     width: 95%;
-    height: 50;
+    height: 50%;
     margin-left: 0%;
   }
 }
@@ -147,6 +150,7 @@ div.preview {
 img {
   max-width: 100%;
   max-height: 100%;
+  object-fit: contain;
 }
 
 .arrow {
@@ -157,8 +161,17 @@ img {
   width: 3%;
 }
 
-.close-gallery:hover {
+.current_picture {
+  float:left;
+  /* position: absolute; */
+  width: 93%;
+  object-fit: contain;
+}
+
+.button-hover:hover {
     cursor:pointer;
     /* The alternative could be 'grab' - this would show the grab hand. */
 }
+
+
 

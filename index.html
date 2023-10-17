@@ -64,10 +64,24 @@
 
   <div id="displayhere"></div>
   <div id="modal" class="modal" style="display:block;">
-    <div class="close-gallery" style="text-align: right;"><a onclick="closeGallery()"><img width="25px" height="25px" src="images/close-sharp.svg"/></a></div>
-    <div  class="arrow" > <a onclick="pictures.previousImage()"><img width="65px" height="65px" src="images/arrow-back.svg"/></a></div>
-        <div style="float:left;width: 93%;"><img id="pictureOnDisplay" src="images/brighterchecklist-1.png" alt="An image of the BrighterChecklist home page."></div>
-        <div class="arrow" ><a onclick="pictures.nextImage()"><img width="65px" height="65px" src="images/arrow-forward.svg"/></a></div>
+    <div class="button-hover" style="text-align: right;">
+      <a onclick="closeGallery()">
+        <img width="25px" height="25px" src="images/close-sharp.svg"/>
+      </a>
+    </div>
+    <div  class="arrow button-hover" > 
+      <a class="button-hover" onclick="pictures.previousImage()">
+        <img width="65px" height="65px" src="images/arrow-back.svg"/>
+      </a>
+    </div>
+    <div class="current_picture">
+      <img id="pictureOnDisplay" src="images/brighterchecklist-1.png"  alt="An image of the BrighterChecklist home page.">
+    </div>
+    <div class="arrow" >
+      <a class="button-hover" onclick="pictures.nextImage()">
+        <img width="65px" height="65px" src="images/arrow-forward.svg"/>
+      </a>
+    </div>
     </div>
     <div class="clearfix"></div>
     <button onclick="getDescription('brighterchecklist.xml')">click</button>
