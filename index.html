@@ -16,7 +16,11 @@
     <div class="col-1 border-on preview">
       <h2 id="headline"></h2>
       <p><b><span id="tagline"></span></b></p>
-      <div style="text-align: center;"><button onclick="gallery();">Gallery</button></div>
+      <div class="button-hover" style="text-align: center;">
+        <a onclick="gallery();"><img width="50px" height="50px" src="images/image-gallery.svg"/>
+        <p>Project Gallery</p>
+        </a>
+      </div>
     </div>
     <div id="details" class="col-3 border-on preview" style="overflow-y:scroll;"></div>
 
@@ -63,7 +67,8 @@
   </div>
 
   <div id="displayhere"></div>
-  <div id="modal" class="modal" style="display:block;">
+
+  <div id="modal" class="modal" style="display:none;">
     <div class="button-hover" style="text-align: right;">
       <a onclick="closeGallery()">
         <img width="25px" height="25px" src="images/close-sharp.svg"/>

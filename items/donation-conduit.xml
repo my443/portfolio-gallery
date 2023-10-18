@@ -1,0 +1,17 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<portfolioitem>
+    <title>Donation Conduit</title>
+    <tagline>Automatic Journal Entries from Donation System</tagline>
+    <problem>After donations are entered in the Donation Managment System the corresponding journal entries had to be entered manually in the accounting system. This meant extra work and reconciliation issues because of the complexity of the way that donations were allocated to different internal organizations.</problem>
+    <solution>I built an application which consumed data posted by the Donation System and transformed the data into the right accounting allocation based on the gifts that were entered and the parameters chosen with in the application. The application created a file that is natively consumed by the accounting application. The journal entry creation and transfer to the accounting system is now automatic. This application is used three to five times a week since 2008 by the accounting department.</solution>
+    <technologies>
+        <technology>Python</technology>
+        <technology>SQLite</technology>
+        <technology></technology>
+    </technologies>
+    <additionaltext>One of the challenges to address in this project was to create a file that could be consumed by the accounting system. The accounting system uses a proprietary file format. I had to look at the current files, determine the structure, and write the results of the tranfromation into a new file. This is done by writing a specific hexidecimal pattern based on the transformed data.</additionaltext>
+    <id></id>
+    <images>
+        <image>donation-conduit-1.png</image>
+    </images>
+</portfolioitem>

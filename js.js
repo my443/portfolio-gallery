@@ -32,6 +32,7 @@ function getDescription(itemName){
     xmlhttp.send();
 }
 
+/** Uses the XML provided to determine the source for the preview section and the images display. */
 function parseXMLToArray(){
     sourceXML = this.responseXML;
 
@@ -42,6 +43,7 @@ function parseXMLToArray(){
     additionaltext = getSingleValueFromXML(sourceXML, 'additionaltext')
     id = getSingleValueFromXML(sourceXML, 'id')
     technologies = getValuesFromAListInTheXML(sourceXML, 'technology');
+    images = getArrayFromListInXML(sourceXML, 'image')
 
     json = {
         'id': id,
@@ -51,15 +53,26 @@ function parseXMLToArray(){
         'solution': solution,
         'technologies': technologies,
         'additionalText': additionaltext,
+        'images': images,
     }
-    
+
+    pictures = new Pictures(images);
     fillPreviewArea(json);
 }
 
+/** Returns the text from a single element in the XML. 
+ *  If an element occurs more than one time, this selects 
+ *  only the first occurrence of the element. 
+ */
 function getSingleValueFromXML(sourceXML, elementName){
     return sourceXML.getElementsByTagName(elementName)[0].innerHTML
 }
 
+/** Returns text from a list of elements in the XML.
+ *  If the element occurs more than one time, then all of the occurrences
+ *  are returned in a string. 
+ *  If the element occurs only 1x, it will also be returned in a single-item.
+ */
 function getValuesFromAListInTheXML(sourceXML, listItemElementName){
     elements = sourceXML.getElementsByTagName(listItemElementName)
     returnString = '';
@@ -78,10 +91,23 @@ function getValuesFromAListInTheXML(sourceXML, listItemElementName){
 
 }
 
+/** Returns an array of the innerHTML for an identified element. */
+function getArrayFromListInXML(sourceXML, listItemElementName){
+    elements = sourceXML.getElementsByTagName(listItemElementName)
+    returnArray = [];
+    tempArray = Array.from(elements);
+
+    tempArray.forEach((element) =>{
+        returnArray.push(element.innerHTML);
+    });
+
+    return returnArray;
+}
+
 function gallery(){
     if (document.getElementById('modal').style.display == 'none') {
         document.getElementById('modal').style.display = 'block';
-        pictures = new Pictures(['brighterchecklist-1.png', 'brighterchecklist-2.png', 'brighterchecklist-3.png']);
+        // pictures = new Pictures(['brighterchecklist-1.png', 'brighterchecklist-2.png', 'brighterchecklist-3.png']);
     }
     else {
         document.getElementById('modal').style.display = 'none'    
@@ -126,11 +152,6 @@ function Pictures(listOfImages=[]) {
     }
 
   }
-
-
-// Add the functions to the prototype of the object
-// https://stackoverflow.com/questions/13521833/javascript-add-method-to-object
-Pictures.prototype.a = function(c){console.log(c);}
 
 
 document.onkeydown = function keyPress (e) {

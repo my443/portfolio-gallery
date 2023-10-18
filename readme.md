@@ -35,5 +35,6 @@ Next I'm going to start working on getting the data from the directory.
 
 Possible TODO items: 
 [ ] Make the carousel swipe-able. So that if you are on a mobile device you can swipe left and right to navigate the pictures. 
+[ ] When you stretch out the carousel on a mobile device, the arrows no longer line up with the middle of the veritical modal.
 
 
