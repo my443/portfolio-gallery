@@ -26,3 +26,14 @@ Initially I had thought that I wanted it to pop out like a streaming service pre
 ### The markdown approach and a switch to XML
 At first I thought that I would make the source-files markdown. This is a good idea, and I even started creating a markdown parser for a simple subset of markdown. But I started thinking about whether it was really valuable to have the source be markdown. If this project started to scale to be users beyond myself, it might be worth it to use this approach. But since the primary user will be myself, I decided to switch to a structured XML source file. At some point I could write a simple Python script that gives me a form that allows me to edit the specific fields of the xml file(if I need this.) The XML files are pretty static, so there won't be too many updates to these. 
 
+### October 14 - 18
+I've made good progress. I've coded a carousel out of pure javascript to display each of the portfolio items. 
+Next I'm going to start working on getting the data from the directory. 
+
+
+
+
+Possible TODO items: 
+[ ] Make the carousel swipe-able. So that if you are on a mobile device you can swipe left and right to navigate the pictures. 
+
+

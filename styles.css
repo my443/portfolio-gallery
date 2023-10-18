@@ -153,8 +153,16 @@ img {
   object-fit: contain;
 }
 
-.arrow {
+.left-arrow {
   float:left;
+  /* position: absolute; */
+  padding-top: 25%;
+  top:45%;
+  width: 3%;
+}
+
+.right-arrow {
+  float:right;
   /* position: absolute; */
   padding-top: 25%;
   top:45%;
@@ -166,6 +174,15 @@ img {
   /* position: absolute; */
   width: 93%;
   object-fit: contain;
+}
+
+.picture{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .button-hover:hover {
