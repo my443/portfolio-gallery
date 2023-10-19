@@ -179,3 +179,15 @@ addEventListener("DOMContentLoaded", (event) => {
 
 });
 
+// Uses Template Literals: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
+let itemDivTemplate = `<div class="responsive">
+<div id="item-1" class="gallery" onmouseover="fillPreviewArea('${'some-'+'thing'}')" onmouseout="popDownDiv('item-1')">
+  <h3 id="item-1-headline">BrighterChecklists</h3>
+  <p id="item-1-tagline">Repeating checklists to help you do the job right every time.</p>
+  <a target="_blank" href="">
+    <img src="" alt="Cinque Terre" width="600" height="400">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
+</div>`
+
