@@ -1,3 +1,5 @@
+let jsonItemList = {};
+
 function popOutDiv(elementID){
     element = document.getElementById(elementID);
     element = document.getElementById(elementID);
@@ -10,12 +12,15 @@ function popDownDiv(elementID){
     element.classList.remove('modal');
 }
 
-function fillPreviewArea(json){
+function fillPreviewArea(itemName){
+    json = jsonItemList[itemName];
+    
     // headline = document.getElementById('item-1-headline').innerHTML;
     // tagline = document.getElementById('item-1-tagline').innerHTML;
     document.getElementById('headline').innerHTML = json.title;
     document.getElementById('tagline').innerHTML = json.tagline;
     document.getElementById('details').innerHTML = json.problem + '<br>' + json.solution + '<br>' + json.additionalText ;
+    pictures = new Pictures(json.images);
     // console.log(headline, tagline);
 }
 
@@ -56,8 +61,15 @@ function parseXMLToArray(){
         'images': images,
     }
 
-    pictures = new Pictures(images);
-    fillPreviewArea(json);
+    // pictures = new Pictures(images);
+    // fillPreviewArea(json);
+    addJSONToItemsList(json);
+
+}
+
+/** Adds the json from loaded xml to the global list. */
+function addJSONToItemsList(json){
+    jsonItemList[json.id] = json;
 }
 
 /** Returns the text from a single element in the XML. 
@@ -160,4 +172,10 @@ document.onkeydown = function keyPress (e) {
     }
 }
 
+addEventListener("DOMContentLoaded", (event) => {
+    listOfItems.forEach((item) =>{
+        getDescription(item);
+    });
+
+});
 
