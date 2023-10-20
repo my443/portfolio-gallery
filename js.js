@@ -12,7 +12,6 @@ function gallertyItems (){
     }
 
     this.getOneItem = function (item){
-        console.log(item, this.jsonItemList[item]);
         return this.jsonItemList[item];
     }
 
@@ -36,7 +35,7 @@ function popDownDiv(elementID){
 }
 
 function fillPreviewArea(itemName){
-    json = jsonItemList[itemName];
+    json = myGlobalGallery.getOneItem(itemName);
     
     // headline = document.getElementById('item-1-headline').innerHTML;
     // tagline = document.getElementById('item-1-tagline').innerHTML;
@@ -86,7 +85,7 @@ function parseXMLToArray(){
 
     // pictures = new Pictures(images);
     // fillPreviewArea(json);
-    addJSONToItemsList(json);
+    // addJSONToItemsList(json);
     myGlobalGallery.addItem(json);
 }
 
@@ -198,24 +197,13 @@ document.onkeydown = function keyPress (e) {
 addEventListener("DOMContentLoaded", (event) => {
     listOfItems.forEach((item) =>{
         getDescription(item);
+        // if (Object.keys(myGlobalGallery.getAllItems()).length == listOfItems.length){
+        //     console.log(myGlobalGallery.getAllItems());
+        // }
         // console.log(jsonItemList["brighterchecklist"]);
     });
 
-    // console.log(jsonItemList);
-    
-    console.log('jsonlist', myGlobalGallery.jsonItemList);
-    z = myGlobalGallery.getAllItems();
-
-    console.log(z["brighterchecklist"]);
-    console.log(z["brighterchecklist"]);
-    console.log("global itemlist", myGlobalGallery.getOneItem("brighterchecklist"));
-
-    listOfItems.forEach((item) => {
-        myGlobalGallery.getOneItem("brighterchecklist");
-        // console.log("item name", item);
-        // console.log("global itemlist", myGlobalGallery.getOneItem("brighterchecklist"));
-   
-    });
+    // console.log(jsonItemList);    
 });
 
 function divToAdd(item){
