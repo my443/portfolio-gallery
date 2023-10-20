@@ -18,8 +18,8 @@
       <h2 id="headline"></h2>
       <p><b><span id="tagline"></span></b></p>
       <div class="button-hover" style="text-align: center;">
-        <a onclick="gallery();"><img width="50px" height="50px" src="images/image-gallery.svg"/>
-        <p>Project Gallery</p>
+        <a onclick="gallery();"><img width="50px" height="50px" src="images/image-gallery.svg" />
+          <p>Project Gallery</p>
         </a>
       </div>
     </div>
@@ -27,75 +27,79 @@
 
   </div>
 
-  <div class="responsive">
-    <div id="item-1" class="gallery" onmouseover="fillPreviewArea('brighterchecklist')" onmouseout="popDownDiv('item-1')">
-      <h3 id="item-1-headline">BrighterChecklists</h3>
-      <p id="item-1-tagline">Repeating checklists to help you do the job right every time.</p>
-      <a target="_blank" href="">
-        <img src="" alt="Cinque Terre" width="600" height="400">
-      </a>
-      <div class="desc">Add a description of the image here</div>
+  <div id="gallery-container">
+    <div class="responsive">
+      <div id="item-1" class="gallery" onmouseover="fillPreviewArea('brighterchecklist')">
+        <h3 id="item-1-headline">BrighterChecklists</h3>
+        <p id="item-1-tagline">Repeating checklists to help you do the job right every time.</p>
+        <a target="_blank" href="">
+          <img src="" alt="Cinque Terre" width="600" height="400">
+        </a>
+        <div class="desc">Add a description of the image here</div>
+      </div>
+    </div>
+
+
+    <div class="responsive">
+      <div class="gallery">
+        <a target="_blank" href="">
+          <img src="" alt="Forest" width="600" height="400">
+        </a>
+        <div class="desc">Add a description of the image here</div>
+      </div>
+    </div>
+
+    <div class="responsive">
+      <div class="gallery">
+        <a target="_blank" href="">
+          <img src="" alt="Northern Lights" width="600" height="400">
+        </a>
+        <div class="desc">Add a description of the image here</div>
+      </div>
+    </div>
+
+    <div class="responsive">
+      <div class="gallery">
+        <a target="_blank" href="">
+          <img src="" alt="Mountains" width="600" height="400">
+        </a>
+        <div class="desc">Add a description of the image here</div>
+      </div>
     </div>
   </div>
 
-
-  <div class="responsive">
-    <div class="gallery">
-      <a target="_blank" href="">
-        <img src="" alt="Forest" width="600" height="400">
-      </a>
-      <div class="desc">Add a description of the image here</div>
-    </div>
-  </div>
-
-  <div class="responsive">
-    <div class="gallery">
-      <a target="_blank" href="">
-        <img src="" alt="Northern Lights" width="600" height="400">
-      </a>
-      <div class="desc">Add a description of the image here</div>
-    </div>
-  </div>
-
-  <div class="responsive">
-    <div class="gallery">
-      <a target="_blank" href="">
-        <img src="" alt="Mountains" width="600" height="400">
-      </a>
-      <div class="desc">Add a description of the image here</div>
-    </div>
-  </div>
 
   <div id="displayhere"></div>
 
   <div id="modal" class="modal" style="display:none;">
     <div class="button-hover" style="text-align: right;">
       <a onclick="closeGallery()">
-        <img width="25px" height="25px" src="images/close-sharp.svg"/>
+        <img width="25px" height="25px" src="images/close-sharp.svg" />
       </a>
     </div>
-    <div  class="left-arrow button-hover" > 
+    <div class="left-arrow button-hover">
       <a class="button-hover" onclick="pictures.previousImage()">
-        <img width="65px" height="65px" src="images/arrow-back.svg"/>
+        <img width="65px" height="65px" src="images/arrow-back.svg" />
       </a>
     </div>
     <div class="current_picture">
-      <img id="pictureOnDisplay" class="picture" src="images/brighterchecklist-1.png"  alt="An image of the BrighterChecklist home page.">
+      <img id="pictureOnDisplay" class="picture" src="images/brighterchecklist-1.png"
+        alt="An image of the BrighterChecklist home page.">
     </div>
-    <div class="right-arrow" >
+    <div class="right-arrow">
       <a class="button-hover" onclick="pictures.nextImage()">
-        <img width="65px" height="65px" src="images/arrow-forward.svg"/>
+        <img width="65px" height="65px" src="images/arrow-forward.svg" />
       </a>
     </div>
-    </div>
-    <div class="clearfix"></div>
-    <button onclick="getDescription('brighterchecklist.xml')">click</button>
-    <div style="padding:6px;">
-      <p>This example use media queries to re-arrange the images on different screen sizes: for screens larger than
-        700px wide, it will show four images side by side, for screens smaller than 700px, it will show two images side
-        by side. For screens smaller than 500px, the images will stack vertically (100%).</p>
-      <p>You will learn more about media queries and responsive web design later in our CSS Tutorial.</p>
-    </div>
+  </div>
+  <div class="clearfix"></div>
+  <button onclick="getDescription('brighterchecklist.xml')">click</button>
+  <div style="padding:6px;">
+    <p>This example use media queries to re-arrange the images on different screen sizes: for screens larger than
+      700px wide, it will show four images side by side, for screens smaller than 700px, it will show two images side
+      by side. For screens smaller than 500px, the images will stack vertically (100%).</p>
+    <p>You will learn more about media queries and responsive web design later in our CSS Tutorial.</p>
+  </div>
 
 </body>
 

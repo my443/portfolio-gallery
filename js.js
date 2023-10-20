@@ -1,4 +1,27 @@
 let jsonItemList = {};
+// A class to manage the gallery items
+function gallertyItems (){
+    this.jsonItemList = {};
+
+    this.addItem = function (item) {
+        this.jsonItemList[item.id] = item;
+    }
+
+    this.getAllItems = function (){
+        return this.jsonItemList;
+    }
+
+    this.getOneItem = function (item){
+        console.log(item, this.jsonItemList[item]);
+        return this.jsonItemList[item];
+    }
+
+    this.printList = function (){
+        console.log(this.jsonItemList);
+    }
+}
+
+let myGlobalGallery = new gallertyItems();
 
 function popOutDiv(elementID){
     element = document.getElementById(elementID);
@@ -64,7 +87,7 @@ function parseXMLToArray(){
     // pictures = new Pictures(images);
     // fillPreviewArea(json);
     addJSONToItemsList(json);
-
+    myGlobalGallery.addItem(json);
 }
 
 /** Adds the json from loaded xml to the global list. */
@@ -175,19 +198,44 @@ document.onkeydown = function keyPress (e) {
 addEventListener("DOMContentLoaded", (event) => {
     listOfItems.forEach((item) =>{
         getDescription(item);
+        // console.log(jsonItemList["brighterchecklist"]);
     });
 
+    // console.log(jsonItemList);
+    
+    console.log('jsonlist', myGlobalGallery.jsonItemList);
+    z = myGlobalGallery.getAllItems();
+
+    console.log(z["brighterchecklist"]);
+    console.log(z["brighterchecklist"]);
+    console.log("global itemlist", myGlobalGallery.getOneItem("brighterchecklist"));
+
+    listOfItems.forEach((item) => {
+        myGlobalGallery.getOneItem("brighterchecklist");
+        // console.log("item name", item);
+        // console.log("global itemlist", myGlobalGallery.getOneItem("brighterchecklist"));
+   
+    });
 });
 
-// Uses Template Literals: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
-let itemDivTemplate = `<div class="responsive">
-<div id="item-1" class="gallery" onmouseover="fillPreviewArea('${'some-'+'thing'}')" onmouseout="popDownDiv('item-1')">
-  <h3 id="item-1-headline">BrighterChecklists</h3>
-  <p id="item-1-tagline">Repeating checklists to help you do the job right every time.</p>
-  <a target="_blank" href="">
-    <img src="" alt="Cinque Terre" width="600" height="400">
-  </a>
-  <div class="desc">Add a description of the image here</div>
-</div>
-</div>`
+function divToAdd(item){
+    console.log(item);
+    // Uses Template Literals: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
+    let itemDiv = `<div class="responsive">
+                            <div id="item-1" class="gallery" onmouseover="fillPreviewArea('${item['title']}')">
+                            <h3 id="item-1-headline">BrighterChecklists</h3>
+                            <p id="item-1-tagline">${item['tagline']}</p>
+                            <a target="_blank" href="">
+                                <img src="" alt="Cinque Terre" width="600" height="400">
+                            </a>
+                            <div class="desc">Add a description of the image here</div>
+                            </div>
+                            </div>`
 
+    return itemDiv;
+
+         // itemToAdd = divToAdd(myGlobalGallery.jsonItemList.item);
+        // console.log(itemToAdd);
+        // alert(itemToAdd);
+        // document.getElementById('gallery-container').appendChild(itemToAdd);
+}
