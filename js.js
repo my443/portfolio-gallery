@@ -220,12 +220,14 @@ if (document.readyState !== 'loading') {
 function divToAdd(item){
     // Uses Template Literals: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
     let itemDiv = `<div class="responsive">
-                            <div id="item-1" class="gallery" onmouseover="fillPreviewArea('${item['id']}')">
+                            <div id="item-1" class="gallery" onclick="fillPreviewArea('${item['id']}')">
                             <h3 id="item-1-headline">${item['title']}</h3>
                             <p id="item-1-tagline">${item['tagline']}</p>
+                            <div class="gallery-image" style="text-align: center;">
                             <a target="_blank" href="">
-                                <img src="images/${item['images'][0]}" alt="Cinque Terre" width="300" height="200">
+                                <img src="images/${item['images'][0]}" alt="Picture of ${item['title']}"/>
                             </a>
+                            </div>
                             <div class="desc">Add a description of the image here</div>
                             </div>
                             </div>`

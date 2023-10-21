@@ -1,0 +1,18 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<portfolioitem>
+    <title>Classic Racer Game</title>
+    <tagline>A game that takes you back to the 1980s</tagline>
+    <problem>On the earliest home computers there were many text based racer games.</problem>
+    <solution>I wrote a racer game in C to explore the language and relive some childhood memories.</solution>
+    <technologies>
+        <technology>C (Programming Language)</technology>
+        <technology></technology>
+        <technology></technology>
+    </technologies>
+    <additionaltext></additionaltext>
+    <id></id>
+    <images>
+        <image>racer-game-1.png</image>
+        <image>racer-game-2.png</image>
+    </images>    
+</portfolioitem>
