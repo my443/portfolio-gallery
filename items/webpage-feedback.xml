@@ -13,7 +13,7 @@
         <a href="https://github.com/my443/webpage-feedback" target="_blank">Github Repository for Webpage Feedback</a>
         <p>The code in the repository saves each response in a separate file. The solution is easy to modify so that you could put the results in a database also.</p>
     </additionaltext>
-    <id></id>
+    <id>webpage-feedback</id>
     <images>
         <image>webpage-feedback-1.png</image>
         <image>webpage-feedback-2.png</image>
