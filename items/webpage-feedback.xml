@@ -1,0 +1,22 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<portfolioitem>
+    <title>Webpage Feedback</title>
+    <tagline>Lightweight User Feedback Collector</tagline>
+    <problem>I needed a simple way to collect feedback from users on a webpage. I didn't want to use a complex or large library.</problem>
+    <solution>I created a simple feedback collector which took the user input and sent it to a REST endpoint.</solution>
+    <technologies>
+        <technology>Javascript</technology>
+        <technology>PHP</technology>
+        <technology>HTML</technology>
+    </technologies>
+    <additionaltext>
+        <a href="https://github.com/my443/webpage-feedback" target="_blank">Github Repository for Webpage Feedback</a>
+        <p>The code in the repository saves each response in a separate file. The solution is easy to modify so that you could put the results in a database also.</p>
+    </additionaltext>
+    <id></id>
+    <images>
+        <image>webpage-feedback-1.png</image>
+        <image>webpage-feedback-2.png</image>
+        <image></image>
+    </images>
+</portfolioitem>

@@ -1,0 +1,22 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<portfolioitem>
+    <title>Volcano Time Tracking</title>
+    <tagline>Time Tracking Per Project</tagline>
+    <problem>Within a corporate setting there are often many projects being delivered at the same time. It is difficult to know exactly how much time is spent on each project.</problem>
+    <solution>Volcano Time Tracker enables you to track the time spent on each project. You can enter individual tasks which add to the project time.</solution>
+    <technologies>
+        <technology>FreePascal</technology>
+        <technology></technology>
+        <technology></technology>
+    </technologies>
+    <additionaltext>
+        <a href="https://github.com/my443/volcano-time-tracker" target="_blank">Github Repository for Volcano Time Tracker</a>
+    </additionaltext>
+    <id></id>
+    <images>
+        <image>volcano-1.png</image>
+        <image>volcano-2.png</image>
+        <image>volcano-3.png</image>
+        <image>volcano-4.png</image>
+    </images>
+</portfolioitem>
