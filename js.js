@@ -50,18 +50,23 @@ function fillPreviewArea(itemName){
 // Getting the XML File starts here. 
 
 /* Item name does not require the .xml extension */
-function getDescription(itemName){
+ function getDescription(itemName){
     var xmlhttp = new XMLHttpRequest();
     urlpath = 'items/' + itemName + '.xml';
 
-    xmlhttp.addEventListener("load", parseXMLToArray);
+    // xmlhttp.addEventListener("load", parseXMLToArray);
+    xmlhttp.addEventListener("load", function () {
+        parseXMLToArray(xmlhttp.responseXML); // Pass the response to the callback function
+    });
+
     xmlhttp.open("GET", urlpath , true);
     xmlhttp.send();
 }
 
 /** Uses the XML provided to determine the source for the preview section and the images display. */
-function parseXMLToArray(){
-    sourceXML = this.responseXML;
+function parseXMLToArray(sourceXML){
+    // sourceXML = this.responseXML;
+    console.log(sourceXML);
 
     title = getSingleValueFromXML(sourceXML, 'title')
     tagline = getSingleValueFromXML(sourceXML, 'tagline')
@@ -87,6 +92,7 @@ function parseXMLToArray(){
     // fillPreviewArea(json);
     // addJSONToItemsList(json);
     myGlobalGallery.addItem(json);
+    divToAdd(json);
 }
 
 /** Adds the json from loaded xml to the global list. */
@@ -194,20 +200,24 @@ document.onkeydown = function keyPress (e) {
     }
 }
 
-addEventListener("DOMContentLoaded", (event) => {
+if (document.readyState !== 'loading') {
+    console.log('document is already ready, just execute code here');
     listOfItems.forEach((item) =>{
         getDescription(item);
-        // if (Object.keys(myGlobalGallery.getAllItems()).length == listOfItems.length){
-        //     console.log(myGlobalGallery.getAllItems());
-        // }
-        // console.log(jsonItemList["brighterchecklist"]);
+        // alert('first '+ item);
     });
 
-    // console.log(jsonItemList);    
-});
+} else {
+    addEventListener("DOMContentLoaded", (event) => {
+        listOfItems.forEach((item) =>{
+            getDescription(item);
+            // alert('second '+ item);
+        });
+    });
+
+}
 
 function divToAdd(item){
-    console.log(item);
     // Uses Template Literals: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
     let itemDiv = `<div class="responsive">
                             <div id="item-1" class="gallery" onmouseover="fillPreviewArea('${item['title']}')">
@@ -220,7 +230,9 @@ function divToAdd(item){
                             </div>
                             </div>`
 
-    return itemDiv;
+    let doc  = new DOMParser().parseFromString(itemDiv, 'text/html');
+    document.getElementById('gallery-container').appendChild(doc.firstChild);
+    console.log(doc);
 
          // itemToAdd = divToAdd(myGlobalGallery.jsonItemList.item);
         // console.log(itemToAdd);
